@@ -47,6 +47,9 @@ if (isset($_SESSION['user_id'])) {
     <a href="admin_annonces.php">📢 Annonces</a>
   <?php endif; ?>
     <a href="apropos.php">🧭 À propos</a>
+    <?php if (isset($_SESSION['user_id'])): ?>
+    <a href="tos.php" style="margin-bottom: 35px;">✒️ Conditions de Service</a>
+  <?php endif; ?>
     <a href="logout.php" class="logout">🚪 Déconnexion</a>
   <?php endif; ?>
     <?php if (!isset($_SESSION['user_id'])): ?>
@@ -214,3 +217,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
