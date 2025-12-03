@@ -1,7 +1,7 @@
 
 # Contrat de Licence Utilisateur Final (CLUF) - FoodHub 2.0
 
-**Version Finale - Date effective : 06 décembre 2025**
+**Version Finale - Date effective : 03 décembre 2025**
 
 ## IMPORTANT - LISEZ ATTENTIVEMENT
 
