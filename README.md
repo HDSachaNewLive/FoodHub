@@ -397,14 +397,13 @@ Le script SQL `install.sql` crée automatiquement 3 restaurants de démonstratio
 - [Google reCAPTCHA (v2)](https://www.google.com/recaptcha/) - Protection anti-spam
 
 **Musiques et sons :**
-- Nintendo eShop OST (téléchargé depuis Youtube) / Animal Crossing OST (usage éducatif uniquement)
+- Nintendo eShop OST/Nintendo 3DS/WiiU System Music (téléchargé depuis Youtube) / Animal Crossing OST (usage éducatif uniquement)
 
 ---
 
 ## Licence
 
 Ce projet est réalisé dans un cadre éducatif (BTS SIO). Tous droits réservés.
-REPRODUCTION INTERDITE
 
 **Utilisation à des fins éducatives uniquement.**
 
