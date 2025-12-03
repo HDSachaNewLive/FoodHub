@@ -61,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // ne rien faire si erreur
         }
 
-        // Créer notification pour super-admin
+        // Créer notification pour super-admin (user_id = 1)
         try {
             $message = "Nouveau restaurant à vérifier : " . $nom;
             $notifStmt = $conn->prepare("INSERT INTO notifications (user_id, type, restaurant_id, avis_id, message) VALUES (?, 'comment', ?, NULL, ?)");
-            $notifStmt->execute([$siteOwnerId, $resto_id, $message]);
+            $notifStmt->execute([1, $resto_id, $message]); // user_id = 1 (super-admin)
         } catch (Exception $e) {
             // ne pas bloquer
         }
@@ -317,4 +317,5 @@ VANTA.WAVES({
 })();
 </script>
 </body>
+
 </html>
