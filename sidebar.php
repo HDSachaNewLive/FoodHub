@@ -7,14 +7,7 @@ $totalNotifCount = 0;
 
 if (isset($_SESSION['user_id'])) {
     $user_id = (int)$_SESSION["user_id"];
-    $owner_email = "mehdiguerbas5@gmail.com"; // email du proprio
-    $is_owner = false;
-    
-    // récupérer email de l'utilisateur
-    $uQ = $conn->prepare("SELECT email FROM users WHERE user_id = ?");
-    $uQ->execute([$user_id]);
-    $uR = $uQ->fetch(PDO::FETCH_ASSOC);
-    if ($uR && isset($uR["email"])) $is_owner = ($uR["email"] === $owner_email);
+    $is_owner = ($user_id === 1); // Super-admin basé sur user_id
     
     $stmt = $conn->prepare("SELECT COUNT(*) FROM notifications WHERE user_id=? AND is_read=0");
     $stmt->execute([$user_id]);
@@ -67,34 +60,6 @@ if (isset($_SESSION['user_id'])) {
         <span class="menu-badge"><?= $totalNotifCount ?></span>
     <?php endif; ?>
 </button>
-
-<?php
-// récupération nombre de notifs non lues
-$notifCount = 0;
-$pendingRestoCount = 0;
-
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-
-    // Notifs non lues classiques
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM notifications WHERE user_id=? AND is_read=0");
-    $stmt->execute([$user_id]);
-    $notifCount = (int)$stmt->fetchColumn();
-
-    // Si c'est le propriétaire (super-admin)
-    $owner_email = "mehdiguerbas5@gmail.com";
-    $uQ = $conn->prepare("SELECT email FROM users WHERE user_id = ?");
-    $uQ->execute([$user_id]);
-    $email = $uQ->fetchColumn();
-
-    if ($email === $owner_email) {
-        // Restos à vérifier
-        $pQ = $conn->query("SELECT COUNT(*) FROM restaurants WHERE verified = 0");
-        $pendingRestoCount = (int)$pQ->fetchColumn();
-    }
-}
-$totalNotifCount = $notifCount + $pendingRestoCount;
-?>
 
 <style>
 /* barre */
