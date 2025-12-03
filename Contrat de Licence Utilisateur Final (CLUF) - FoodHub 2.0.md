@@ -245,7 +245,7 @@ Pour signaler des violations de ce CLUF ou des utilisations non autorisées, con
 **© 2025 Mehdi GUERBAS - Tous droits réservés**
 
 **Version du CLUF** : 1.0  
-**Date de dernière modification** : 6 décembre 2025  
+**Date de dernière modification** : 3 décembre 2025  
 **Projet** : FoodHub - Plateforme de commande de repas en ligne
 
 ---
