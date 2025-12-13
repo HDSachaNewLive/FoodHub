@@ -615,7 +615,7 @@ document.addEventListener("click", function(e) {
   position: fixed;
   top: 20px;
   left: 50%;
-  right: 100%;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   color: #727272ff;
@@ -1140,4 +1140,5 @@ function hideEditForm(id) {
 
 <script src="assets/update_vote.js"></script>
 </body>
+
 </html>
